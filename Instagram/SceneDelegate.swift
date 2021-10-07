@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Instagram
 //
-//  Created by Rosa Calosso on 10/6/21.
+//  Created by Kervens Delpe on 10/6/21.
 //
 
 import UIKit

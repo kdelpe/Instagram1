@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mg4-ws-amZ">
-                                <rect key="frame" x="290" y="811" width="70" height="36"/>
+                                <rect key="frame" x="80" y="609" width="70" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -25,7 +25,7 @@
                                     <color key="titleColor" red="0.26724632009999999" green="0.57027975149999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ni-bv-CWh"/>
+                                    <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6A0-AP-Nm7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-df-Mf1">
@@ -66,7 +66,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fic-ze-AkS">
-                                <rect key="frame" x="20" y="582" width="374" height="50"/>
+                                <rect key="frame" x="219" y="595" width="138" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.26724632009999999" green="0.57027975149999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -74,7 +74,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IWL-rE-4aO"/>
+                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ln1-Vh-xPk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,8 +82,8 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                     </view>
                     <connections>
-                        <outlet property="passwordField" destination="hbp-1I-mQl" id="0Ez-Lz-kot"/>
-                        <outlet property="usernameField" destination="Gop-4e-DsJ" id="agC-Z3-U1d"/>
+                        <outlet property="passwordField" destination="hbp-1I-mQl" id="ZsU-un-YEr"/>
+                        <outlet property="usernameField" destination="Gop-4e-DsJ" id="5mw-4r-3Tx"/>
                         <segue destination="07L-a6-okt" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="mb4-Jd-Tb8"/>
                     </connections>
                 </viewController>
@@ -233,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRO-hL-vSq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737.68115942028987" y="77.678571428571431"/>
+            <point key="canvasLocation" x="822" y="78"/>
         </scene>
     </scenes>
     <resources>

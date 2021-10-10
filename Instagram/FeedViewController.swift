@@ -8,6 +8,7 @@
 import UIKit
 import Parse
 import AlamofireImage
+import RSKPlaceholderTextView
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -42,7 +43,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func loadPosts(){
-        numberofPosts += 5
+        numberofPosts = 20
         let query = PFQuery(className:"Posts")
         query.includeKey("author")
         query.limit = numberofPosts

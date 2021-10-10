@@ -9,6 +9,7 @@ import UIKit
 import AlamofireImage
 import Parse
 import RSKPlaceholderTextView
+import MBProgressHUD
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -53,8 +54,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         } else {
             picker.sourceType = .photoLibrary
         }
-        
+   
         present(picker, animated: true, completion: nil)
+  
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

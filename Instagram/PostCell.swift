@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Parse
+import AlamofireImage
+import RSKPlaceholderTextView
 
 class PostCell: UITableViewCell {
     

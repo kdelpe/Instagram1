@@ -17,6 +17,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var posts = [PFObject]()
     
+    var currentUser = PFUser.current()
+    
     let myRefreshControl = UIRefreshControl()
     
     var numberofPosts = Int()

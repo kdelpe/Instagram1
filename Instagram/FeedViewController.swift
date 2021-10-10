@@ -32,20 +32,39 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
-        myRefreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
-        self.tableView.refreshControl = myRefreshControl
-        tableView.rowHeight = 469
-        tableView.estimatedRowHeight = 469
+
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.loadMorePosts()
+        
+        myRefreshControl.addTarget(self, action: #selector(loadMorePosts), for: .valueChanged)
+        self.tableView.refreshControl = myRefreshControl
+        tableView.rowHeight = 469
+        tableView.estimatedRowHeight = 469
     }
     
     @objc func loadPosts(){
-        numberofPosts = 20
+        numberofPosts = 5
+        let query = PFQuery(className:"Posts")
+        query.includeKey("author")
+        query.limit = numberofPosts
+        
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                self.posts.removeAll()
+                self.posts = posts!
+                self.posts.reverse()
+                self.tableView.reloadData()
+            } else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+            }
+        }
+    }
+    @objc func loadMorePosts(){
+        numberofPosts += 5
         let query = PFQuery(className:"Posts")
         query.includeKey("author")
         query.limit = numberofPosts
@@ -62,25 +81,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    func loadMorePosts(){
-        numberofPosts += 20
-        let query = PFQuery(className:"Posts")
-        query.includeKey("author")
-        query.limit = numberofPosts
-        
-        query.findObjectsInBackground { (posts, error) in
-            if posts != nil {
-                self.posts.removeAll()
-                self.posts = posts!
-                self.posts.reverse()
-                self.tableView.reloadData()
-            } else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-            }
-        }
-    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    if indexPath.row + 1 == posts.count {
+    if indexPath.row + 1 == numberofPosts {
     loadMorePosts()
     }
     }
@@ -111,6 +113,18 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let delegate = windowScene.delegate as? SceneDelegate else {return}
+        
+        delegate.window?.rootViewController = loginViewController
+        
+    }
     
 
     /*

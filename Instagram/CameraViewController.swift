@@ -70,6 +70,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func goBackButton(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

@@ -18,7 +18,6 @@ The following **bonus** features are implemented:
 
 - [x] User can pull to refresh. (1pt)
 - [x] User can load past posts infinitely. (2pts)
-- [x] User can pull to refresh
 - [x] User can navigate back from the camera screen
 - [x] User sees a placeholder text in the text field 
 

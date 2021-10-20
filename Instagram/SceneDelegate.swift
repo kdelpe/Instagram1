@@ -21,7 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        if PFUser.current() != nil {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let feednavigationcontroller = main.instantiateViewController(identifier: "FeedNavigationController")
+            window?.rootViewController = feednavigationcontroller
         }
+        
+        }
+    
     @IBAction func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
         

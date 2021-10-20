@@ -10,6 +10,7 @@ pod 'Parse'
 pod 'AlamofireImage'
 pod 'RSKPlaceholderTextView'
 pod 'MBProgressHUD' 
+pod 'MessageInputBar'
 
 
   target 'InstagramTests' do
